@@ -27,7 +27,8 @@ export const addStyles = (editorWrapperStyles, editorStyles) => {
 export const useInlineStyles = (onChange, editorState) => {
     const inlineStyle = editorState.getCurrentInlineStyle();
     
-    const InlineButtons = Const.InlineButtonsData.map(iBD => (
+    // B, U, I, <> buttons
+    const BUICButtons = Const.BUICButtonsData.map(iBD => (
                                                         <Styles.Button key={iBD.command + "-" + iBD.text}
                                                                         specialDecoration={iBD.specialDecoration}
                                                                         active={inlineStyle.has(iBD.command)} 
@@ -36,8 +37,15 @@ export const useInlineStyles = (onChange, editorState) => {
                                                         </Styles.Button>
                                                     ));
     
+
     return {
-        InlineButtons
+        BUICButtons
     }
 
+}
+
+
+// onSubmit
+export const onSubmit = (htmlText) => {
+    console.log(htmlText);
 }

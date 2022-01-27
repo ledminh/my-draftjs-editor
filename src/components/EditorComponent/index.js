@@ -10,7 +10,7 @@ import 'draft-js/dist/Draft.css';
 import { useEffect, useState } from 'react';
 
 
-const EditorComponent = ({editorWrapperStyles, editorStyles}) => {
+const EditorComponent = ({editorWrapperStyles, editorStyles, onSubmit}) => {
     const [editorState, setEditorState] = useState(EditorState.createEmpty());
 
     useEffect(() => {
@@ -39,7 +39,18 @@ const EditorComponent = ({editorWrapperStyles, editorStyles}) => {
         return 'not-handled';
     }
     
-    const {InlineButtons} = Funcs.useInlineStyles(onChange, editorState);
+
+    const _onSubmit = () => {
+        let htmlText = "";
+
+        const oSM = onSubmit? onSubmit : Funcs.onSubmit;
+        oSM(htmlText);
+        
+    }
+
+
+
+    const {BUICButtons} = Funcs.useInlineStyles(onChange, editorState);
     
 
 
@@ -51,7 +62,8 @@ const EditorComponent = ({editorWrapperStyles, editorStyles}) => {
                     handleKeyCommand={handleKeyCommand}
             />
             <Styles.ToolBar>
-                {InlineButtons}
+                <Styles.BUICWrapper>{BUICButtons}</Styles.BUICWrapper>
+                <Styles.SubmitButton onClick={_onSubmit}>SUBMIT</Styles.SubmitButton>
             </Styles.ToolBar>
         </Styles.Wrapper>
         

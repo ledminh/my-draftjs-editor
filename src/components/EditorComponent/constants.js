@@ -8,11 +8,15 @@ export const Styles = Object.freeze({
     editorStyles: {
         padding: "10px",
         color: "black",
-        backgroundColor: "white"
+        backgroundColor: "white",
+    
+        maxHeight: (window.innerHeight - 100) + "px",
+        minHeight: "400px",
+        overflowY: "scroll"
     }
 });
 
-export const InlineButtonsData = [
+export const BUICButtonsData = [
     {
         command: "BOLD",
         text: "B",

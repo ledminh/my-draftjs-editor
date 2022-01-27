@@ -11,6 +11,7 @@ export const Wrapper = styled.div`
 export const ToolBar = styled.div`
     display: flex;
     flex-flow: row wrap;
+    justify-content: space-between;
     padding: 5px;
     background-color: #3c3c47;
 
@@ -32,14 +33,49 @@ export const Button = styled.div`
     ${props => props.specialDecoration}
 
     :hover {
-        color: white;
-        border: 1px solid white;
+        background-color: #696969;
+    }
+
+    :active {
+        color: #c7c7c7;
+        border: 1px solid #c7c7c7;
     }
 
     ${props => props.active && css`
         color: white;
         border: 1px solid white;
     `}
+`
+
+export const BUICWrapper = styled.div`
+    display: flex;
+    padding-right: 5px;
+    border-right: 4px double #a6a6a6;
+
+`
+
+export const SubmitButton = styled.div`
+    border: 1px solid white;
+    padding: 5px;
+    padding-top: 6px;
+    border-radius: 15px;
+    background-color: #d9d9d9;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    :hover {
+        background-color: #a8a8a8;
+        color: #545454;
+        border: 1px solid #a8a8a8;
+
+    }
+
+    :active {
+        background-color: #bababa;
+        color: #424242;
+        border: 1px solid #bababa;
+    }
 `
 
 

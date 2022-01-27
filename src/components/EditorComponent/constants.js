@@ -1,0 +1,1 @@
+// export const CONST = "This is a constance";

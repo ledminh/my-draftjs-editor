@@ -1,3 +1,3 @@
-# My React Boilerplate
+# My DraftJS Editor
 
-This boilerplate serves as the starting point for all of my react projects.
+I'm trying to build an editor using DraftJS. 

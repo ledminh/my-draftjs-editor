@@ -8,6 +8,7 @@ import {Editor, EditorState, RichUtils} from 'draft-js';
 
 import 'draft-js/dist/Draft.css';
 import { useEffect, useState } from 'react';
+import { stateToHTML } from 'draft-js-export-html';
 
 
 const EditorComponent = ({editorWrapperStyles, editorStyles, onSubmit}) => {
@@ -41,7 +42,7 @@ const EditorComponent = ({editorWrapperStyles, editorStyles, onSubmit}) => {
     
 
     const _onSubmit = () => {
-        let htmlText = "";
+        let htmlText = stateToHTML(editorState.getCurrentContent());
 
         const oSM = onSubmit? onSubmit : Funcs.onSubmit;
         oSM(htmlText);
